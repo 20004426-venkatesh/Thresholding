@@ -1,12 +1,12 @@
 # Thresholding
-## AIM:
+## Aim
 To segment the image using global thresholding, adaptive thresholding and Otsu's thresholding using python and OpenCV.
 
-## SOFTWARE REQUIRED:
+## Software Required
 1. Anaconda - Python 3.7
 2. OpenCV
 
-## ALGORITHM:
+## Algorithm
 
 ### Step 1:
 Load the necessary packages.
@@ -26,7 +26,8 @@ Use Otsu's method to segment the image.
 ### Step 6:
 Display the results.
 
-## PROGRAM:
+## Program
+
 ```python
 # Load the necessary packages
 import cv2
@@ -46,8 +47,8 @@ ret,thresh_img4=cv2.threshold(image_gray,86,255,cv2.THRESH_TOZERO_INV)
 ret,thresh_img5=cv2.threshold(image_gray,100,255,cv2.THRESH_TRUNC)
 
 # Use Adaptive thresholding to segment the image
-thresh_img7=cv2.adaptiveThreshold(image_gray,255,cv2.ADAPTIVE_THRESH_MEAN_C,cv2.THRESH_BINARY,11,2)
-thresh_img8=cv2.adaptiveThreshold(image_gray,255,cv2.ADAPTIVE_THRESH_GAUSSIAN_C,cv2.THRESH_BINARY,11,2)
+thresh_img7=cv2.adaptive Threshold(image_gray,255,cv2.ADAPTIVE_THRESH_MEAN_C,cv2.THRESH_BINARY,11,2)
+thresh_img8=cv2.adaptive Threshold(image_gray,255,cv2.ADAPTIVE_THRESH_GAUSSIAN_C,cv2.THRESH_BINARY,11,2)
 
 # Use Otsu's method to segment the image 
 ret,thresh_img6=cv2.threshold(image_gray,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)
@@ -57,7 +58,7 @@ titles=["Gray Image","Threshold Image (Binary)","Threshold Image (Binary Inverse
        ,"Threshold Image (To Zero-Inverse)","Threshold Image (Truncate)","Otsu","Adaptive Threshold (Mean)","Adaptive Threshold (Gaussian)"]
 images=[image_gray,thresh_img1,thresh_img2,thresh_img3,thresh_img4,thresh_img5,thresh_img6,thresh_img7,thresh_img8]
 for i in range(0,9):
-    plt.figure(figsize=(5,5))
+    plt.figure(figsize=(10,10))
     plt.subplot(1,2,1)
     plt.title("Original Image")
     plt.imshow(image)
@@ -67,29 +68,32 @@ for i in range(0,9):
     plt.imshow(cv2.cvtColor(images[i],cv2.COLOR_BGR2RGB))
     plt.axis("off")
     plt.show()
+
+
 ```
-## OUTPUT:
+## Output
 
-### Original Image and Grayscale Image
-![tv1](https://user-images.githubusercontent.com/75234983/169495508-44538337-24a8-4af9-a929-cbaf3f36fcc7.jpg)
+### Original Image
 
 
+![at1](https://user-images.githubusercontent.com/75234983/169643723-e5e1b6d8-7539-4afd-8170-0e84c1e0d7c0.jpg)
 
 
 ### Global Thresholding
-![tv2](https://user-images.githubusercontent.com/75234983/169495547-5fedcc60-2853-4f5c-a59e-e9b9051b56fe.jpg)
 
+![at2](https://user-images.githubusercontent.com/75234983/169643731-9dd6489f-4780-49bb-884c-0afa2215095d.jpg)
 
 
 ### Adaptive Thresholding
-![tv3](https://user-images.githubusercontent.com/75234983/169495561-557c6252-d84a-44d3-8e11-eaeea64afe8a.jpg)
+
+![at3](https://user-images.githubusercontent.com/75234983/169643738-3dd72027-aecf-4c9a-b495-26c3bb594266.jpg)
 
 
 ### Optimum Global Thesholding using Otsu's Method
 
-![tv4](https://user-images.githubusercontent.com/75234983/169495628-68bee68f-2fea-4b2a-95e8-cd30d93bd93e.jpg)
+![at4](https://user-images.githubusercontent.com/75234983/169643742-7c034a9b-c599-43e5-add7-f43f59629bd8.jpg)
 
 
 
-## RESULT:
+## Result
 Thus the images are segmented using global thresholding, adaptive thresholding and optimum global thresholding using python and OpenCV.
